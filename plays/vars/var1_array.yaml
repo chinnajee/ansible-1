@@ -1,0 +1,15 @@
+---
+#This script is to display a perticular student 
+- hosts: all
+  vars:
+    students:
+      - Hari
+      - Siva
+      - Murugan
+      - Gomathi
+      - Banu
+
+  tasks:
+  - name: Ansible List variable Example
+    debug:
+      msg: "{{ students[2] }}"

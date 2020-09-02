@@ -1,0 +1,17 @@
+---
+- hosts: all
+# Dictionary entries as below 
+  gather_facts: no
+  vars:
+    students:
+    - Mark: 
+        city: Melbourne
+        address: 0045-0987-8642
+    - Angela: 
+        city: Sydney
+        address: 3456-7685-9087
+# to access i am using the below task
+  tasks:
+  - debug:
+      var: students[1:city]
+...

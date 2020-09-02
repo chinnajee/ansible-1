@@ -1,0 +1,20 @@
+---
+- hosts: all
+  remote_user: user
+  become: yes
+  become_method: sudo
+  gather_facts: no
+  connection: ssh
+  tasks:
+
+    - name: remove user "sysadmin" to remote server
+      user:
+       name: user01
+       state: absent
+#       remove: yes
+
+    - name: remove group "Office" from remote server
+      group:
+       name: office
+       state: absent
+...

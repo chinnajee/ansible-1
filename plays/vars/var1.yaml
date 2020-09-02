@@ -1,0 +1,8 @@
+---
+- hosts: all
+  vars:
+    var1: Hello guys! Welcome to Ansible Class
+  tasks:
+  - name: Ansible Variable Basic Usage
+    debug:
+      msg: "{{ var1 }}"

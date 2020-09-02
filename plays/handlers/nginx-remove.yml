@@ -1,0 +1,5 @@
+---
+- hosts: node-1
+  tasks:
+   - name: Install Nginx
+     yum: pkg=nginx state=absent 

@@ -1,0 +1,19 @@
+---
+- hosts: all
+  remote_user: root
+
+  tasks:
+    - name: Check OS
+      shell: |
+       whoami
+       cat /etc/redhat-release
+       if [ -d "/tmp" ]
+       then
+          echo "Directory /tmp exists."
+       else
+           echo "Error: Directory /tmp does not exists."
+       fi
+      register: output
+    - debug:
+        msg: "{{ output.stdout_lines|list }}"
+      when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "7"

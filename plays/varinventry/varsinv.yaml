@@ -1,0 +1,9 @@
+web_servers:
+     hosts:
+       web_server_1:
+       web_server_2:
+         
+         vars:
+           http_port=80
+           ntp_server=us.pool.ntp.org
+

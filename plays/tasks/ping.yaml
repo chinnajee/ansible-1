@@ -1,0 +1,7 @@
+---
+# this script is to ping
+- hosts:
+    - all
+  tasks:
+    - action: ping
+...

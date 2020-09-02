@@ -1,0 +1,23 @@
+---
+- hosts: all
+  remote_user: user
+  become: yes
+  become_method: sudo
+  gather_facts: no
+  connection: ssh
+  tasks:
+   - name: Add group "Office" to remote server
+     group:
+       name: office
+       gid: 2001
+       state: present
+
+   - name: Add user "sysadmin" to remote server
+     user:
+       name: sysadmin
+       comment: "Privileged User"
+       uid: 2001
+       group: office
+       shell: /bin/bash
+       state: present
+

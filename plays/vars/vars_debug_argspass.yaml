@@ -1,0 +1,16 @@
+---
+# this script will do two task
+# task 1: print all variables and
+# task 2: display only a perticular variable "ansible version"
+ 
+- hosts: '{{ arg1 }}'
+  gather_facts: no
+  tasks:
+    - name: print all variables
+      debug:
+        var: vars
+
+    - name: get one variable
+      debug:
+        msg: "This value is {{ vars.ansible_version.full }}"
+...
